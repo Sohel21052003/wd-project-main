@@ -1,0 +1,938 @@
+:root {
+    --primary: #0a0e23;
+    --secondary: #c19a6b;
+    --light: #f8f5f2;
+    --dark: #121212;
+    --gray: #6d6d6d;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark);
+    padding-top: 56px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary);
+    transition: all 0.3s;
+}
+
+.navbar.scrolled {
+    background-color: rgba(10, 14, 35, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.luxury-text {
+    color: var(--secondary);
+}
+
+.nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: width 0.3s;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.nav-link.active {
+    font-weight: 600;
+}
+
+.nav-link.active:after {
+    width: 100%;
+}
+
+/* Hero Sections */
+.carousel-item {
+    height: 100vh;
+    min-height: 500px;
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 14, 35, 0.5);
+}
+
+.carousel-caption {
+    bottom: 30%;
+    z-index: 10;
+}
+
+.carousel-caption h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.page-hero {
+    height: 60vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 56px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+/* Buttons */
+.btn-luxury {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s;
+    min-width: 150px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn-luxury:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-luxury-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-luxury-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Sections */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.section-title span {
+    color: var(--secondary);
+}
+
+.divider {
+    height: 3px;
+    width: 80px;
+    background: var(--secondary);
+    margin: 0 auto 3rem;
+    position: relative;
+}
+
+.divider:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--secondary);
+    border-radius: 50%;
+}
+
+.divider-left {
+    margin: 0 0 2rem;
+}
+
+.py-5 {
+    padding: 5rem 0;
+}
+
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+/* Cards */
+.attraction-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.attraction-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.attraction-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.attraction-card:hover img {
+    transform: scale(1.05);
+}
+
+.attraction-card .card-body {
+    padding: 1.5rem;
+}
+
+.attraction-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.btn-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-link i {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.btn-link:hover {
+    color: var(--secondary);
+}
+
+.btn-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Landmark Cards */
+.landmark-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.landmark-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.landmark-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.landmark-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.landmark-content {
+    padding: 2rem;
+}
+
+.landmark-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.landmark-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.landmark-meta i {
+    margin-right: 5px;
+    color: var(--secondary);
+}
+
+.landmark-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+/* Feedback Form */
+.feedback-container {
+    background-color: rgba(193, 154, 107, 0.05);
+    border: 1px solid rgba(193, 154, 107, 0.1);
+}
+
+.feedback-form {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.feedback-form:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--secondary);
+}
+
+.feedback-form label {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.feedback-form .form-control {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+.feedback-form .form-control:focus {
+    box-shadow: none;
+    border-bottom-color: var(--secondary);
+}
+
+/* Map Section */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.map-container img {
+    width: 100%;
+    display: block;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(10,14,35,0.8), transparent);
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: var(--primary);
+    color: white;
+}
+
+.social-links a {
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.rounded {
+    border-radius: 8px !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-caption h1,
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .carousel-item,
+    .page-hero {
+        height: 70vh;
+        min-height: 400px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .landmark-meta,
+    .landmark-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .landmark-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Amusement Park Specific Styles */
+.park-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.park-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.park-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.park-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.park-content {
+    padding: 2rem;
+}
+
+.park-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.park-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.park-meta i {
+    margin-right: 5px;
+    color: var(--secondary);
+}
+
+.park-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 1.5rem 0;
+}
+
+.park-features span {
+    background: rgba(193, 154, 107, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.park-features i {
+    color: var(--secondary);
+    margin-right: 5px;
+}
+
+.park-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Tips Section */
+.tip-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.tip-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+.tip-card h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .park-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .park-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .park-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Water Park Specific Styles */
+.waterpark-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.waterpark-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.waterpark-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.waterpark-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.waterpark-content {
+    padding: 2rem;
+}
+
+.waterpark-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.waterpark-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.waterpark-meta i {
+    margin-right: 5px;
+    color: var(--secondary);
+}
+
+.waterpark-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 1.5rem 0;
+}
+
+.waterpark-features span {
+    background: rgba(193, 154, 107, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.waterpark-features i {
+    color: var(--secondary);
+    margin-right: 5px;
+}
+
+.waterpark-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Safety Cards */
+.safety-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.safety-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.safety-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+}
+
+.safety-card h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .waterpark-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .waterpark-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .waterpark-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Beach Specific Styles */
+.beach-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.beach-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.beach-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.beach-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.beach-content {
+    padding: 2rem;
+}
+
+.beach-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.beach-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.beach-meta i {
+    margin-right: 5px;
+    color: var(--secondary);
+}
+
+.beach-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 1.5rem 0;
+}
+
+.beach-features span {
+    background: rgba(193, 154, 107, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.beach-features i {
+    color: var(--secondary);
+    margin-right: 5px;
+}
+
+.beach-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .beach-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .beach-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .beach-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Add these styles to your style.css file */
+.hotel-card,
+.restaurant-card,
+.cafe-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-card:hover,
+.restaurant-card:hover,
+.cafe-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.hotel-image,
+.restaurant-image,
+.cafe-image {
+    height: 250px;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hotel-content,
+.restaurant-content,
+.cafe-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-badge,
+.restaurant-badge,
+.cafe-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.hotel-rating,
+.restaurant-rating,
+.cafe-rating {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #FFD700;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.hotel-features,
+.restaurant-features,
+.cafe-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.hotel-features span,
+.restaurant-features span,
+.cafe-features span {
+    background: rgba(193, 154, 107, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.hotel-actions,
+.restaurant-actions,
+.cafe-actions {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.hotel-meta,
+.restaurant-meta,
+.cafe-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.hotel-meta i,
+.restaurant-meta i,
+.cafe-meta i {
+    margin-right: 5px;
+    color: var(--secondary);
+}
